@@ -1,4 +1,4 @@
-package br.com.financiasjpa.teste;
+package br.com.financiasjpa.util;
 
 import java.math.BigDecimal;
 import java.util.Calendar;
@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 
 import br.com.financiasjpa.modelo.Conta;
 import br.com.financiasjpa.modelo.Movimentacao;
-import br.com.financiasjpa.util.JPAUtil;
+import br.com.financiasjpa.modelo.TipoMovimentacao;
 
 
 public class PopulaMovimentacao {
@@ -15,7 +15,6 @@ public class PopulaMovimentacao {
 	public static void main(String[] args) {
 
 		EntityManager manager = new JPAUtil().getEntityManager();
-
 		manager.getTransaction().begin();
 
 		Conta conta1 = manager.find(Conta.class,1);
@@ -34,7 +33,7 @@ public class PopulaMovimentacao {
 		movimentacao1.setData(Calendar.getInstance());
 		movimentacao1.setDescricao("Conta de luz - ABRIL/2012");
 		movimentacao1.setValor(new BigDecimal("135"));
-		movimentacao1.setTipoMovimentacao(TipoMovimentacao.SAIDA);
+		movimentacao1.setTipo(TipoMovimentacao.SAIDA);
 		movimentacao1.setConta(conta1);
 
 		manager.persist(movimentacao1);
@@ -42,7 +41,7 @@ public class PopulaMovimentacao {
 		movimentacao2.setData(Calendar.getInstance());
 		movimentacao2.setDescricao("Almoco no Restaurante - AGOSTO/2012");
 		movimentacao2.setValor(new BigDecimal("175.80"));
-		movimentacao2.setTipoMovimentacao(TipoMovimentacao.SAIDA);
+		movimentacao2.setTipo(TipoMovimentacao.SAIDA);
 		movimentacao2.setConta(conta1);
 
 		manager.persist(movimentacao2);
@@ -50,7 +49,7 @@ public class PopulaMovimentacao {
 		movimentacao3.setData(Calendar.getInstance());
 		movimentacao3.setDescricao("Aluguel - MAIO/2012");
 		movimentacao3.setValor(new BigDecimal("680.00"));
-		movimentacao3.setTipoMovimentacao(TipoMovimentacao.ENTRADA);
+		movimentacao3.setTipo(TipoMovimentacao.ENTRADA);
 		movimentacao3.setConta(conta1);
 
 		manager.persist(movimentacao3);
@@ -58,7 +57,7 @@ public class PopulaMovimentacao {
 		movimentacao4.setData(Calendar.getInstance());
 		movimentacao4.setDescricao("Salario - FEVEREIRO/2012");
 		movimentacao4.setValor(new BigDecimal("3830.68"));
-		movimentacao4.setTipoMovimentacao(TipoMovimentacao.ENTRADA);
+		movimentacao4.setTipo(TipoMovimentacao.ENTRADA);
 		movimentacao4.setConta(conta1);
 
 		manager.persist(movimentacao4);
@@ -70,7 +69,7 @@ public class PopulaMovimentacao {
 		movimentacao5.setData(Calendar.getInstance());
 		movimentacao5.setDescricao("Conta de telefone - SETEMBRO/2011");
 		movimentacao5.setValor(new BigDecimal("168.27"));
-		movimentacao5.setTipoMovimentacao(TipoMovimentacao.SAIDA);
+		movimentacao5.setTipo(TipoMovimentacao.SAIDA);
 		movimentacao5.setConta(conta2);
 
 		manager.persist(movimentacao5);
@@ -78,7 +77,7 @@ public class PopulaMovimentacao {
 		movimentacao6.setData(Calendar.getInstance());
 		movimentacao6.setDescricao("Aniversario - MAIO/2011");
 		movimentacao6.setValor(new BigDecimal("200"));
-		movimentacao6.setTipoMovimentacao(TipoMovimentacao.ENTRADA);
+		movimentacao6.setTipo(TipoMovimentacao.ENTRADA);
 		movimentacao6.setConta(conta2);
 
 		manager.persist(movimentacao6);
@@ -91,7 +90,7 @@ public class PopulaMovimentacao {
 		movimentacao7.setData(Calendar.getInstance());
 		movimentacao7.setDescricao("Lanche - JULHO/2011");
 		movimentacao7.setValor(new BigDecimal("28.50"));
-		movimentacao7.setTipoMovimentacao(TipoMovimentacao.SAIDA);
+		movimentacao7.setTipo(TipoMovimentacao.SAIDA);
 		movimentacao7.setConta(conta3);
 
 		manager.persist(movimentacao7);
@@ -99,7 +98,7 @@ public class PopulaMovimentacao {
 		movimentacao8.setData(Calendar.getInstance());
 		movimentacao8.setDescricao("Presente - DEZEMBRO/2011");
 		movimentacao8.setValor(new BigDecimal("49.99"));
-		movimentacao8.setTipoMovimentacao(TipoMovimentacao.SAIDA);
+		movimentacao8.setTipo(TipoMovimentacao.SAIDA);
 		movimentacao8.setConta(conta3);
 
 		manager.persist(movimentacao8);
@@ -107,7 +106,7 @@ public class PopulaMovimentacao {
 		movimentacao9.setData(Calendar.getInstance());
 		movimentacao9.setDescricao("Bonus - JANEIRO/2012");
 		movimentacao9.setValor(new BigDecimal("2000"));
-		movimentacao9.setTipoMovimentacao(TipoMovimentacao.ENTRADA);
+		movimentacao9.setTipo(TipoMovimentacao.ENTRADA);
 		movimentacao9.setConta(conta3);
 
 		manager.persist(movimentacao9);
@@ -118,7 +117,7 @@ public class PopulaMovimentacao {
 		movimentacao10.setData(Calendar.getInstance());
 		movimentacao10.setDescricao("Carnaval - MARCO/2012");
 		movimentacao10.setValor(new BigDecimal("765.20"));
-		movimentacao10.setTipoMovimentacao(TipoMovimentacao.SAIDA);
+		movimentacao10.setTipo(TipoMovimentacao.SAIDA);
 		movimentacao10.setConta(conta4);
 
 		manager.persist(movimentacao10);
@@ -130,7 +129,7 @@ public class PopulaMovimentacao {
 		movimentacao11.setData(Calendar.getInstance());
 		movimentacao11.setDescricao("Salario - ABRIL/2012");
 		movimentacao11.setValor(new BigDecimal("2651.90"));
-		movimentacao11.setTipoMovimentacao(TipoMovimentacao.ENTRADA);
+		movimentacao11.setTipo(TipoMovimentacao.ENTRADA);
 		movimentacao11.setConta(conta5);
 
 		manager.persist(movimentacao11);
@@ -138,7 +137,7 @@ public class PopulaMovimentacao {
 		movimentacao12.setData(Calendar.getInstance());
 		movimentacao12.setDescricao("Bonus - JANEIRO/2012");
 		movimentacao12.setValor(new BigDecimal("1000"));
-		movimentacao12.setTipoMovimentacao(TipoMovimentacao.ENTRADA);
+		movimentacao12.setTipo(TipoMovimentacao.ENTRADA);
 		movimentacao12.setConta(conta5);
 
 		manager.persist(movimentacao12);
