@@ -15,6 +15,16 @@ public class Conta {
 	private String numero;
 	private String banco;
 	private String agencia;
+	
+	public Conta() {
+	}
+
+	public Conta(String titular, String numero, String banco, String agencia) {
+		this.titular = titular;
+		this.numero = numero;
+		this.banco = banco;
+		this.agencia = agencia;
+	}
 
 	public Integer getId() {
 		return id;

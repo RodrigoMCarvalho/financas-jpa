@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -17,7 +18,18 @@ public class Cliente {
 	private String profisao;
 	
 	@OneToOne
-	private Conta conta;
+	@JoinColumn(unique=true) //nenhum outro cliente pode ter uma conta já utilizada
+	private Conta conta;     //só funciona na hora de criar a tabela
+	
+	public Cliente() {
+	}
+
+	public Cliente(String nome, String endereco, String profisao, Conta conta) {
+		this.nome = nome;
+		this.endereco = endereco;
+		this.profisao = profisao;
+		this.conta = conta;
+	}
 
 	public Integer getId() {
 		return id;
