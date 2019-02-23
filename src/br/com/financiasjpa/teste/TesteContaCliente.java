@@ -2,8 +2,6 @@ package br.com.financiasjpa.teste;
 
 import javax.persistence.EntityManager;
 
-import com.mysql.fabric.xmlrpc.Client;
-
 import br.com.financiasjpa.modelo.Cliente;
 import br.com.financiasjpa.modelo.Conta;
 import br.com.financiasjpa.util.JPAUtil;
